@@ -8,8 +8,8 @@
    	# 	add wave -hex -group  	"deMapper1_shiftreg signals$index"	sim:/$TB/uut/sdh_module_inst/e1_ins/deMapper_ins2/shifregister\[$index\]/shiftreg_unit/*
 	# }
 	
-	add wave -hex -group  	"TB signals"					sim:/$TB/*
-	add wave -hex -group  	-r "uut signals"				sim:/$TB/uut/*
+	add wave -bin -group  	"TB signals"					sim:/$TB/*
+	add wave -bin -group  	-r "uut signals"				sim:/$TB/uut/*
 
 	
 	#############################################

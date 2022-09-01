@@ -15,7 +15,7 @@
 	set include_path		"$project_path/src/inc"
 	
 	# You can set the test bench name!
-	set TB					"stuff_or_data_tb"
+	set TB					"fixed_point_adder_tb"
 	#set TB					"tb_sync_fifo_array_class"
 	set wlf_save_name		"wlf/vsim.wlf"
 	set opened_wlf_name		"ref_sim"
