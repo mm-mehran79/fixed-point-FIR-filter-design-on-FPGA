@@ -22,9 +22,9 @@ module fixed_point_adder #(
     parameter B_INT_LEN = B_WORD_LEN - B_FRAC_LEN,
     parameter C_INT_LEN = C_WORD_LEN - C_FRAC_LEN
 ) (
-    input wire [A_WORD_LEN-1:0]a,
-    input wire [B_WORD_LEN-1:0]b,
-    output wire [C_WORD_LEN-1:0]c
+    input wire signed [A_WORD_LEN-1:0]a,
+    input wire signed [B_WORD_LEN-1:0]b,
+    output wire signed [C_WORD_LEN-1:0]c
 );
 //--------------------------------------- wire deceleration
     wire signed [C_INT_LEN + `max(A_FRAC_LEN, B_FRAC_LEN) - 1:0] adder_output;
@@ -41,7 +41,7 @@ generate
         assign input_large = a;
     end
     if (C_FRAC_LEN > `max(A_FRAC_LEN, B_FRAC_LEN)) begin
-        assign c = {adder_output[C_INT_LEN + `max(A_FRAC_LEN, B_FRAC_LEN) - 1:0], {`diff(`max(A_FRAC_LEN, B_FRAC_LEN), C_FRAC_LEN){1'b0}}};
+        assign c = {adder_output, {`diff(`max(A_FRAC_LEN, B_FRAC_LEN), C_FRAC_LEN){1'b0}}};
     end else begin
         assign c = adder_output[C_INT_LEN + `max(A_FRAC_LEN, B_FRAC_LEN) - 1:C_INT_LEN + `max(A_FRAC_LEN, B_FRAC_LEN) - C_WORD_LEN];
     end
