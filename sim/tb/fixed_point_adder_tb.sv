@@ -1,10 +1,9 @@
 //===========================================================
 //
-//			stuff or data testbench
+//			asychronus fixed point adder testbench
 //
 //			Implemented by Mehran Mazaheri
 //          
-//          delay : 
 //          
 //===========================================================
 `timescale 1ns/1ns

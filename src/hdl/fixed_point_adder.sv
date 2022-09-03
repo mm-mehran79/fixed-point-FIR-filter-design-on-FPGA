@@ -5,8 +5,6 @@
 //			Implemented by Mehran Mazaheri
 //          
 //          
-//          pm must not be zero
-//          {counter} must count down to use less lut and speed up
 //===========================================================
 `define minus(a, b) (a-b)
 `define min(a, b) (a<b?a:b)
